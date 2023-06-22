@@ -104,7 +104,7 @@ Response Body:
 		"Id": 1,
 		"Nazwa": "Metodologie obiektowe",
 		"ECTS": 2,
-		"Sala": 206,
+		"Sala": 216,
 		"Egzamin": true
 	},
 	{
@@ -160,7 +160,7 @@ Response Body:
 		"Id": 1,
 		"Nazwa": "Metodologie obiektowe",
 		"ECTS": 2,
-		"Sala": 206,
+		"Sala": 216,
 		"Egzamin": true
 	},
 	{
