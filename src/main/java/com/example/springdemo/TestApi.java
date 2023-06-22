@@ -1,58 +1,52 @@
 package com.example.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-
 @RestController
-@RequestMapping
+@RequestMapping("api")
 public class TestApi {
     @Autowired
-    private ActivityDatabase activityDatabase;
+    private SubjectDatabase subjectDatabase;
 
-    @PostMapping(value = "activities", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void addActivity(@RequestBody Activity activity) {
-        activityDatabase.addActivity(activity);
-    }
+    @PostMapping(value = "subjects", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void addSubject(@RequestBody Subject subject) { subjectDatabase.addSubject(subject); }
 
-    @GetMapping(value = "activities", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Activity> getActivities(
-            @Nullable @RequestParam("priority") Integer priority,
-            @Nullable @RequestParam("name") String name
+    @GetMapping(value = "subjects", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Subject> getSubjects(
+            @Nullable @RequestParam("classroom") Integer classroom,
+            @Nullable @RequestParam("exam") Boolean exam
     ) {
-        return activityDatabase.getActivityList(priority, name);
+        return subjectDatabase.getSubjectList(classroom, exam);
     }
 
-    @GetMapping(value = "activities/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getActivity(@PathVariable("id") Integer id) {
-        Activity activity = activityDatabase.getActivity(id);
+    @GetMapping(value = "subjects/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getSubject(@PathVariable("id") Integer id) {
+        Subject subject = subjectDatabase.getSubject(id);
 
-        if (activity == null) {
+        if (subject == null) {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(activity);
+        return ResponseEntity.ok(subject);
     }
 
-    @DeleteMapping(value = "activities/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity deleteActivity(@PathVariable("id") Integer id) {
-        if (activityDatabase.deleteActivity(id)) {
+    @DeleteMapping(value = "subjects/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteSubject(@PathVariable("id") Integer id) {
+        if (subjectDatabase.deleteSubject(id)) {
             return ResponseEntity.ok().build();
         }
 
         return ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping(value = "activities", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteActivities() {
-        activityDatabase.deleteActivities();
+    @DeleteMapping(value = "subjects", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void deleteSubjects() {
+        subjectDatabase.deleteSubjects();
     }
 }

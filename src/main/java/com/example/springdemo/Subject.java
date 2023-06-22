@@ -6,12 +6,19 @@ import lombok.Data;
 
 @JsonSerialize
 @Data
-public class Activity {
+public class Subject {
+    @JsonProperty("Id")
     private Integer id;
 
-//    @JsonProperty("nazwa")
+    @JsonProperty("Nazwa")
     private String name;
 
-//    @JsonProperty("priorytet")
-    private Integer priority;
+    @JsonProperty("ECTS")
+    private Integer ects;
+
+    @JsonProperty("Sala")
+    private Integer classroom;
+
+    @JsonProperty("Egzamin")
+    private Boolean exam;
 }
