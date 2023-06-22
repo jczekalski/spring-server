@@ -1,4 +1,10 @@
 # Projekt TAW IO2023
+## Docker
+```
+docker build -t spring-server .
+docker run -p 8080:8080 spring-server
+```
+
 ## Raport
 ### 1. Wprowadzenie przedmiotów do systemu
 
