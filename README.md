@@ -136,7 +136,7 @@ Response Body:
 ]
 ```
 
-### 3. Pobranie przedmiotów, które mają egzamin.
+### 3. Pobranie przedmiotów, które mają egzamin
 
 ```
 Metoda: GET
@@ -164,7 +164,7 @@ Response Body:
 ]
 ```
 
-### 4. Pobranie przedmiotów, które odbywają się w sali 216.
+### 4. Pobranie przedmiotów, które odbywają się w sali 216
 
 ```
 Metoda: GET
@@ -175,31 +175,31 @@ Odpowiedź:
 HTTP Code: 200 OK
 Response Body:
 [
-{
-"Id": 1,
-"Nazwa": "Metodologie obiektowe",
-"ECTS": 2,
-"Sala": 216,
-"Egzamin": true
-},
-{
-"Id": 2,
-"Nazwa": "Testowanie oprogramowania",
-"ECTS": 1,
-"Sala": 216,
-"Egzamin": false
-},
-{
-"Id": 4,
-"Nazwa": "Zarządzanie projektem informatycznym",
-"ECTS": 2,
-"Sala": 216,
-"Egzamin": false
-}
+	{
+		"Id": 1,
+		"Nazwa": "Metodologie obiektowe",
+		"ECTS": 2,
+		"Sala": 216,
+		"Egzamin": true
+	},
+	{
+		"Id": 2,
+		"Nazwa": "Testowanie oprogramowania",
+		"ECTS": 1,
+		"Sala": 216,
+		"Egzamin": false
+	},
+	{
+		"Id": 4,
+		"Nazwa": "Zarządzanie projektem informatycznym",
+		"ECTS": 2,
+		"Sala": 216,
+		"Egzamin": false
+	}
 ]
 ```
 
-### 5. Pobranie przedmiotów które nie mają egzaminu i odbywają się w sali 208.
+### 5. Pobranie przedmiotów które nie mają egzaminu i odbywają się w sali 208
 
 ```
 Metoda: GET
@@ -227,7 +227,7 @@ Response Body:
 ]
 ```
 
-### 6. Pobranie przedmiotu o identyfikatorze 3.
+### 6. Pobranie przedmiotu o identyfikatorze 3
 
 ```
 Metoda: GET
@@ -246,7 +246,7 @@ Response Body:
 }
 ```
 
-### 7. Pobranie przedmiotu o identyfikatorze 15.
+### 7. Pobranie przedmiotu o identyfikatorze 15
 
 ```
 Metoda: GET
@@ -258,7 +258,7 @@ HTTP Code: 404 Not Found
 Response Body: brak
 ```
 
-### 8. Usunięcie przedmiotu o identyfikatorze 2.
+### 8. Usunięcie przedmiotu o identyfikatorze 2
 
 ```
 Metoda: DELETE
@@ -270,7 +270,7 @@ HTTP Code: 200 OK
 Response Body: brak
 ```
 
-### 9. Pobranie wszystkich przedmiotów.
+### 9. Pobranie wszystkich przedmiotów
 
 ```
 Metoda: GET
@@ -319,7 +319,7 @@ Response Body:
 ]
 ```
 
-### 10. Usunięcie wszystkich przedmiotów.
+### 10. Usunięcie wszystkich przedmiotów
 
 ```
 Metoda: DELETE
@@ -331,7 +331,7 @@ HTTP Code: 200 OK
 Response Body: brak
 ```
 
-### 11. Pobranie wszystkich przedmiotów.
+### 11. Pobranie wszystkich przedmiotów
 
 ```
 Metoda: GET
